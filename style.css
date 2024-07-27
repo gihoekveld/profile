@@ -26,7 +26,6 @@
 
 body {
   background: var(--bg-url) no-repeat top center/cover;
-  height: 100vh;
 }
 
 body * {
@@ -37,9 +36,15 @@ body * {
   color: var(--text-color);
 }
 
+h1 {
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 32px;
+}
+
 #container {
-  max-width: 588px;
-  width: 360px;
+  max-width: 500px;
+  width: 100%;
 
   margin: 56px auto 0;
   padding: 0 24px;
@@ -111,17 +116,24 @@ body * {
 
 /* links */
 
-ul {
-  list-style: none;
+div#portifolio-list {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  margin: 32px 0 24px;
+}
+
+div#portifolio-list > div {
+  border: 1px solid var(--stroke-color);
+  border-radius: 8px;
+  padding: 24px;
 
   display: flex;
   flex-direction: column;
-  gap: 16px;
-
-  padding: 24px 0;
+  gap: 32px;
 }
 
-ul li a {
+div#portifolio-list > div a {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -140,9 +152,35 @@ ul li a {
   transition: background 0.2s;
 }
 
-ul li a:hover {
+div#portifolio-list > div a:hover {
   background: var(--surface-color-hover);
   border: 1px solid var(--text-color);
+}
+
+h1.mockup-title {
+  text-align: center;
+}
+
+div.mockup-image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+div.mockup-image-container img {
+  width: 100%;
+  max-width: 400px;
+}
+
+div.links-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 16px;
+}
+
+div.links-container a {
+  flex: 1;
 }
 
 /* social links */
@@ -178,13 +216,13 @@ footer {
 
 /* media queries */
 @media (max-width: 700px) {
-  :root {
+  /* :root {
     --bg-url: url(./assets/bg-desktop.jpg);
   }
 
   .light {
     --bg-url: url(./assets/bg-desktop-light.jpg);
-  }
+  } */
 }
 
 /* animation */
